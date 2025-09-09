@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Analytics Dashboard</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: #f5f7fa;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .header h1 {
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+
+      .header p {
+        color: #7f8c8d;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.1rem;
+        color: #7f8c8d;
+      }
+
+      .error {
+        background: #ff6b6b;
+        color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+        text-align: center;
+      }
+
+      .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .chart-container {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .chart-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #2c3e50;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        .dashboard-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .chart-container {
+          padding: 1rem;
+        }
+      }
+      .card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.type-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.chip {
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  padding: .4rem .7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.chip.active {
+  background: #e0ecff;
+  border-color: #3b82f6;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.kpi {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+.kpi-label {
+  color: #6b7280;
+}
+
+.input {
+  width: 100%;
+  padding: .6rem .8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-top: .25rem;
+}
+
+.hint { margin-top: .5rem; color: #6b7280; font-size: .9rem; }
+.pre {
+  font-size: .8rem;
+  overflow: auto;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: .75rem;
+}
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="container">
+        <div class="header">
+          <h1>🚀 Pokémon Analytics Dashboard</h1>
+          <p>Interactive data visualization and analysis platform</p>
+        </div>
+
+        <div class="loading">Loading Pokémon data...</div>
+
+        <!-- This is where your React app will mount -->
+        <!-- Feel free to modify or replace this structure entirely -->
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
